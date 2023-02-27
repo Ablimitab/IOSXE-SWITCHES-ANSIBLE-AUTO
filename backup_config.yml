@@ -1,0 +1,12 @@
+---
+- name: "Play : backup configuration before make any changes"
+  hosts: all 
+
+  tasks: 
+    - name: "Task 1: backup configuration"
+      cisco.ios.ios_config: 
+            backup: yes
+            backup_options:
+                   filename: "{{inventory_hostname}}_backup.cfg"
+                   dir_path: ./Backup_config
+...

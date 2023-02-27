@@ -1,0 +1,10 @@
+---
+- name: run test
+  hosts: all 
+  gather_facts: no 
+  
+  tasks: 
+    - name: testing 
+      cisco.ios.ios_command: 
+         commands: show version 
+    

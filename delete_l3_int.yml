@@ -1,0 +1,17 @@
+---
+- name: delete l3 interfaces 
+  hosts: all 
+
+  tasks: 
+   - name: deleting l3 interface now 
+     cisco.ios.ios_l3_interfaces: 
+       config: 
+           - name: "{{item.name}}"
+       state: deleted
+     with_items: "{{l3_interfaces}}"
+
+
+   - ansible.builtin.debug: 
+       msg: "all l3 interfaces deleted successfully"
+
+...

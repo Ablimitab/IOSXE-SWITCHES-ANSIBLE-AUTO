@@ -1,0 +1,11 @@
+---
+- name: Gat facts from the devices
+  hosts: all 
+  gather_facts: yes 
+  
+  tasks: 
+    - name: Gathering facts from switches
+      ansible.builtin.debug: 
+         msg: "{{ansible_facts}}"
+ 
+    

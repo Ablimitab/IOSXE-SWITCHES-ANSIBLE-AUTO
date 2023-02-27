@@ -1,0 +1,7 @@
+---
+- name: configuring basic features 
+  hosts: all 
+  gather_facts: no 
+  
+  roles: 
+    - basic_setup 

@@ -1,0 +1,15 @@
+---
+- name: run test
+  hosts: all 
+  gather_facts: no 
+  
+  tasks: 
+    - name: show vlans 
+      cisco.ios.ios_command: 
+         commands: show vlan brief
+      register: vlan_result
+     
+    - name: display VLANS 
+      ansible.builtin.debug: 
+         msg: "{{vlan_result.stdout_lines}}"
+

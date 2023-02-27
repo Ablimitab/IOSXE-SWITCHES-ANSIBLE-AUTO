@@ -1,0 +1,12 @@
+---
+- name: delete existing vlans
+  hosts: all 
+
+  tasks: 
+    - name: deleting existing VLANs
+      cisco.ios.ios_vlans:
+        config:
+           - vlan_id: "{{item.id}}"
+         
+        state: deleted
+      with_items: "{{vlans}}"

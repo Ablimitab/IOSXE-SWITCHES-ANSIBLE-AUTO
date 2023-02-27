@@ -1,0 +1,6 @@
+---
+- name: "Play : configure l3 interfaces on core switches"
+  hosts: all 
+
+  roles: 
+    - l3_interfaces    
